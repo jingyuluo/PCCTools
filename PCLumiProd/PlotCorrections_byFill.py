@@ -5,7 +5,7 @@ import subprocess
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--file", default="", help="The csv file containing the corrections fill by fill")
-parser.add_argument("-l", "--label", default="Correctio_Factor_PCC_Run2016", help="The label for output file")
+parser.add_argument("-l", "--label", default="Correction_Factor_PCC_Run2016", help="The label for output file")
 
 args = parser.parse_args()
 
