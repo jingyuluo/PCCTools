@@ -239,7 +239,9 @@ for filename in filenames:
         if hists[fHistName].Integral() < 0.0005*3600:
             print "Histogram contains only data from noise... skipping"
             continue
-
+        
+        hists[fHistName+"SBIL"]=ROOT.TH1F(fHistName+"SBIL", "; SBIL;"+fHistName,100, -0.5, 8)
+        
         hists[fHistName+"TrailingRatios"]=ROOT.TH1F(fHistName+"TrailingRatios",";Type 1 Fraction from after BX train;"+fHistName,200,-0.03,0.15)
         hists[fHistName+"Type2Residuels"]=ROOT.TH1F(fHistName+"Type2Residuels",";Type 2 residual (Hz/ub);"+fHistName,200,-0.02,0.15)
         
@@ -247,10 +249,13 @@ for filename in filenames:
 
         nActiveBX=0
         for ibx in range(2,hists[fHistName].GetNbinsX()-2):
+
+            
             lumiM1=hists[fHistName].GetBinContent(ibx-1)
             lumi=hists[fHistName].GetBinContent(ibx)
             lumiP1=hists[fHistName].GetBinContent(ibx+1)
             lumiP2=hists[fHistName].GetBinContent(ibx+2)
+            hists[fHistName+"SBIL"].Fill(lumi)
             # Is bunch active?
             # Needs to be more than noise and less than lumi
             threshold=0.5
@@ -300,7 +305,7 @@ for filename in filenames:
             type2ValueError[thisFill]={}
             type2ValueErrorClean[thisFill]={}
         nCount=nCount+1
-        type1ValueError[thisFill][fHistName]=type1MeanError#[hists[fHistName+"TrailingRatios"].GetMean(),hists[fHistName+"TrailingRatios"].GetMeanError()]
+        type1ValueError[thisFill][fHistName]=[hists[fHistName+"TrailingRatios"].GetMean(),hists[fHistName+"TrailingRatios"].GetMeanError()]#type1MeanError#[hists[fHistName+"TrailingRatios"].GetMean(),hists[fHistName+"TrailingRatios"].GetMeanError()]
         type2ValueError[thisFill][fHistName]=[hists[fHistName+"Type2Residuels"].GetMean(),hists[fHistName+"Type2Residuels"].GetMeanError()]
 
         if hists[fHistName+"TrailingRatios"].GetMeanError() <0.005 and hists[fHistName+"Type2Residuels"].GetMeanError()<0.00050 and hists[fHistName+"Type2Residuels"].GetMeanError()!=0:
@@ -308,7 +313,7 @@ for filename in filenames:
                 print fHistName+"TrailingRatios is",hists[fHistName+"TrailingRatios"].GetMean(),"looks dubious... skipping... need better criteria for skipping"
                 continue
             type2ValueErrorClean[thisFill][fHistName]=[hists[fHistName+"Type2Residuels"].GetMean(),hists[fHistName+"Type2Residuels"].GetMeanError()]
-            type1ValueErrorClean[thisFill][fHistName]=type1MeanError#[hists[fHistName+"TrailingRatios"].GetMean(),hists[fHistName+"TrailingRatios"].GetMeanError()]
+            type1ValueErrorClean[thisFill][fHistName]=[hists[fHistName+"TrailingRatios"].GetMean(),hists[fHistName+"TrailingRatios"].GetMeanError()]#type1MeanError#[hists[fHistName+"TrailingRatios"].GetMean(),hists[fHistName+"TrailingRatios"].GetMeanError()]
             nClean=nClean+1
         #if hists[fHistName+"Type2Residuels"].GetMeanError() <0.005 :
         #hists[fHistName+"TrailingRatios"].Write()
@@ -396,7 +401,7 @@ for fill in fills:
         value2=fitResult2.GetParameter(0)
         error2=fitResult2.GetParError(0)
         print fill,value1,error1,value2,error2
-        if error1<0.003 and int(fill)>4220:
+        if int(fill)>4220:#error1<0.03 and int(fill)>4220:
             tgraph1.SetPoint(iFill,float(fill),value1)
             tgraph1.SetPointError(iFill,0,error1)
             tgraph2.SetPoint(iFill,float(fill),value2)
