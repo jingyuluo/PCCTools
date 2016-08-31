@@ -402,11 +402,7 @@ for fill in fills:
         value2=fitResult2.GetParameter(0)
         error2=fitResult2.GetParError(0)
         print fill,value1,error1,value2,error2
-<<<<<<< HEAD
-        if int(fill)>4220:#error1<0.03 and int(fill)>4220:
-=======
         if error1<0.01 and int(fill)>4220:
->>>>>>> 51ca260df86e347017b2b4e4516cb7260d6332d2
             tgraph1.SetPoint(iFill,float(fill),value1)
             tgraph1.SetPointError(iFill,0,error1)
             tgraph2.SetPoint(iFill,float(fill),value2)
