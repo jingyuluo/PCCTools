@@ -3,8 +3,6 @@ import sys
 import os
 import argparse
 import json
-from ROOT import kBlue,TF1
-ROOT.gROOT.SetBatch(ROOT.kTRUE)
 
 parser=argparse.ArgumentParser()
 #parser.add_argument("-h",  "--help", help="Print these messages.")
@@ -13,6 +11,9 @@ parser.add_argument("-f",  "--file", default="",  help="File of derived correcti
 parser.add_argument("-l",  "--label",default="",  help="Append the names of output files with this label.")
 parser.add_argument("-j",  "--json", default="",  help="Certification JSON file for selecting runs.")
 args=parser.parse_args()
+
+
+ROOT.gROOT.SetBatch(ROOT.kTRUE)
 
 runSelection={}
 if args.json !="":
@@ -164,7 +165,7 @@ fillInfo["3820"]=["0.018842477",[246951,246953,246954,246956,246957,246958,24695
 fillInfo["3819"]=["0.0188423",[246908,246912,246913,246914,246919,246920,246923,246926,246930,246933,246934,246936]]
 
 def GetGaussianMeanError(hist):
-    fun1 = TF1("fun1", "gaus", -0.03, 0.1)
+    fun1 = ROOT.TF1("fun1", "gaus", -0.03, 0.1)
     hist.Fit(fun1, "R")
     MeanError=[fun1.GetParameter(1), fun1.GetParameter(2)]
     return MeanError
@@ -401,7 +402,11 @@ for fill in fills:
         value2=fitResult2.GetParameter(0)
         error2=fitResult2.GetParError(0)
         print fill,value1,error1,value2,error2
+<<<<<<< HEAD
         if int(fill)>4220:#error1<0.03 and int(fill)>4220:
+=======
+        if error1<0.01 and int(fill)>4220:
+>>>>>>> 51ca260df86e347017b2b4e4516cb7260d6332d2
             tgraph1.SetPoint(iFill,float(fill),value1)
             tgraph1.SetPointError(iFill,0,error1)
             tgraph2.SetPoint(iFill,float(fill),value2)
@@ -439,7 +444,7 @@ type2OverTimeClean["all"].Draw()
 tgraph1.GetYaxis().SetTitleOffset(1.0)
 tgraph1.SetMarkerStyle(23)
 tgraph1.SetMarkerSize(1)
-tgraph1.SetMarkerColor(kBlue)
+tgraph1.SetMarkerColor(ROOT.kBlue)
 tgraph1.Draw("AP")
 text.Draw("same")
 text2.Draw("same")
@@ -450,7 +455,7 @@ can.SaveAs("type1_residualPerFill_"+args.label+".C")
 tgraph2.GetYaxis().SetTitleOffset(1.3)
 tgraph2.SetMarkerStyle(23)
 tgraph2.SetMarkerSize(1)
-tgraph2.SetMarkerColor(kBlue)
+tgraph2.SetMarkerColor(ROOT.kBlue)
 tgraph2.Draw("AP")
 text.Draw("same")
 text2.Draw("same")
