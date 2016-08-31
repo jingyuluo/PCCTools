@@ -20,6 +20,84 @@ args=parser.parse_args()
 
 #Fill   Bfield    Runs 
 fillInfo={}
+
+fillInfo["5247"]=["3.799",[279479,279480,279484,279487,279488,279489]]
+fillInfo["5246"]=["3.799",[279473]]
+fillInfo["5229"]=["3.799",[279115,279116]]
+fillInfo["5223"]=["3.799",[279080]]
+fillInfo["5222"]=["3.799",[279071,279072,279073]]
+fillInfo["5219"]=["3.799",[279024,279028,279029]]
+fillInfo["5213"]=["3.799",[278986]]
+fillInfo["5211"]=["3.799",[278969,278975,278976]]
+fillInfo["5210"]=["3.799",[278962,278963]]
+fillInfo["5209"]=["3.799",[278957]]
+fillInfo["5206"]=["3.799",[278923]]
+fillInfo["5205"]=["3.799",[278873,278874,278875]]
+fillInfo["5199"]=["3.799",[278820,278821,278822]]
+fillInfo["5198"]=["3.799",[278801,278802,278803,278804,278805,278806,278807,278808]]
+fillInfo["5197"]=["3.799",[278769,278770]]
+fillInfo["5196"]=["3.799",[278765]]
+fillInfo["5194"]=["3.799",[278761]]
+fillInfo["5187"]=["3.799",[278509]]
+fillInfo["5183"]=["3.799",[278406]]
+fillInfo["5181"]=["3.799",[278345,278346,278349,278366]]
+fillInfo["5179"]=["3.799",[278315]]
+fillInfo["5173"]=["3.799",[278308,278309,278310]]
+fillInfo["5170"]=["3.799",[278288,278289,278290]]
+fillInfo["5169"]=["3.799",[278273,278274]]
+fillInfo["5163"]=["3.799",[278239,278240]]
+fillInfo["5162"]=["3.799",[278193]]
+fillInfo["5161"]=["3.799",[278167,278175]]
+fillInfo["5154"]=["3.799",[278017,278018]]
+fillInfo["5151"]=["3.799",[277981,277982,277983,277984,277985,277990,277991,277992]]
+fillInfo["5149"]=["3.799",[277932,277933,277934,277935]]
+fillInfo["5117"]=["3.799",[277420]]
+fillInfo["5116"]=["3.799",[277305]]
+fillInfo["5112"]=["3.799",[277217,277218,277219,277220]]
+fillInfo["5111"]=["3.799",[277194,277202]]
+fillInfo["5110"]=["3.799",[277180]]
+fillInfo["5109"]=["3.799",[277166,277168]]
+fillInfo["5108"]=["3.799",[277148]]
+fillInfo["5107"]=["3.799",[277126,277127]]
+
+fillInfo["5106"]=["3.799",[277093,277094,277096]]
+fillInfo["5105"]=["3.799",[277069,277070,277071,277072,277073,277075,277076,277081,277086,277087]]
+fillInfo["5102"]=["3.799",[276940,276941,276942,276944,276945,276946,276947,276948,276950]]
+fillInfo["5101"]=["3.799",[276935]]
+fillInfo["5097"]=["3.799",[276870]]
+fillInfo["5096"]=["3.799",[276831,276832,276834,276835,276836,276837]]
+fillInfo["5095"]=["3.799",[276807,276808,276810,276811]]
+fillInfo["5093"]=["3.799",[276775,276776,276794]]
+fillInfo["5091"]=["3.799",[276653,276655,276659]]
+fillInfo["5085"]=["3.799",[276581,276582,276583,276584,276585,276586,276587]]
+fillInfo["5083"]=["3.799",[276542,276543,276544,276545]]
+fillInfo["5080"]=["3.799",[276525,276527,276528]]
+fillInfo["5078"]=["3.799",[276495,276501,276502]]
+fillInfo["5076"]=["3.799",[276437,276453,276454,276455,276456,276457,276458]]
+fillInfo["5073"]=["3.799",[276352,276355,276357,276361,276363,276384]]
+fillInfo["5072"]=["3.799",[276315,276317,276318,276326,276327]]
+fillInfo["5071"]=["3.799",[276282,276283]]
+fillInfo["5069"]=["2.294",[276225,276226,276229,276232,276235,276237,276242,276243,276244]]
+fillInfo["5068"]=["0.019",[276215,276216,276217]]
+fillInfo["5060"]=["3.800",[276092,276093,276095,276097]]
+fillInfo["5059"]=["3.048",[276054,276062,276063,276064,276071,276072]]
+fillInfo["5056"]=["3.800",[275963]]
+fillInfo["5052"]=["3.800",[275911,275912,275913,275918,275920,275921,275922,275923,275931]]
+fillInfo["5048"]=["3.800",[275886,275887,275890]]
+fillInfo["5045"]=["3.800",[275828,275829,275831,275832,275833,275834,275835,275836,275837,275838,275841,275846,275847]]
+fillInfo["5043"]=["3.800",[275757,275758,275759,275761,275763,275764,275766,275767,275768,275769,275772,275773,275774,275776,275777,275778,275781,275782,275783]]
+fillInfo["5038"]=["3.801",[275656,275657,275658,275659]]
+fillInfo["5030"]=["3.801",[275375,275376]]
+fillInfo["5029"]=["3.801",[275370,275371]]
+fillInfo["5028"]=["3.801",[275344,275345]]
+fillInfo["5027"]=["3.801",[275319,275326,275337,275338]]
+fillInfo["5026"]=["3.801",[275309,275310,275311]]
+fillInfo["5024"]=["3.801",[275282,275283,275284,275285,275286,275289,275290,275291,275292,275293]]
+fillInfo["5021"]=["3.801",[275124,275125]]
+fillInfo["5020"]=["3.801",[275059,275062,275063,275064,275066,275067,275068,275073,275074]]
+fillInfo["5017"]=["3.801",[274998,274999,275000,275001]]
+fillInfo["5013"]=["3.801",[274966,274967,274968,274969,274970,274971]]
+fillInfo["5005"]=["3.801",[274954,274955,274956,274957,274958,274959]]
 fillInfo["4990"]=["3.801",[274440,274441,274442,274443]]
 fillInfo["4988"]=["3.801",[274420,274421,274422]]
 fillInfo["4985"]=["3.801",[274387,274388]]
@@ -193,6 +271,13 @@ fillInfo["3824"]=["0.018828806",[247068,247069,247070,247073,247076,247077,24707
 fillInfo["3820"]=["0.018842477",[246951,246953,246954,246956,246957,246958,246959,246960,246961,246962,246963]]
 fillInfo["3819"]=["0.0188423",[246908,246912,246913,246914,246919,246920,246923,246926,246930,246933,246934,246936]]
 
+#fillLIST=["4201","4205","4207","4208","4210","4211","4212","4214","4219","4220","4224","4225","4231","4243","4246","4249","4254","4256","4257","4266","4268","4269","4322","4323","4332","4337","4341","4342","4349","4356","4360","4363","4364","4376","4381","4384","4386","4391","4393","4397","4398","4402","4410","4418","4420","4423","4426","4428","4432","4434","4435","4437","4440","4444","4448","4449","4452","4455","4462","4463","4464","4466","4467","4476","4477","4479","4485","4495","4496","4499","4505","4509","4510","4511","4513","4518","4519","4522","4525","4528","4530","4532","4536","4538","4540","4545","4555","4557","4851","4879","4888","4889","4895","4915","4926","4937","4942","4945","4947","4953","4954","4956","4958","4960","4964","4965","4979"]
+
+##for FILL in fillLIST:
+##    firstRun=fillInfo[FILL][1][0]
+##    print FILL,",",firstRun
+##sys.exit()
+
 def findRunInFill(run):
     for fill in fillInfo:
         if int(run) in fillInfo[fill][1]:
@@ -222,27 +307,28 @@ nbxfile.close()
 
 corrPerRun={}
 corrPerFill={}
-corrfile=open(args.corrfile)
-for line in corrfile.readlines():
-    items=line.split(",")
-    try:
-        #run=int(items[0])
-        #LS1=int(items[1])
-        #LSN=int(items[2])
-        #corrFac=float(items[3])
-        #if corrFac<0.85: 
-        #    print run,corrFac,"not using"
-        #    continue
-        #if not corrPerRun.has_key(run):
-        #    corrPerRun[run]={}
-        #corrPerRun[run][(LS1,LSN)]=corrFac
-        fill=int(items[0])
-        corrFac=float(items[1])
-        corrPerFill[fill]=corrFac
-    except:
-        print "Problem with line",line
-
-corrfile.close()
+if args.corrfile!="":
+    corrfile=open(args.corrfile)
+    for line in corrfile.readlines():
+        items=line.split(",")
+        try:
+            #run=int(items[0])
+            #LS1=int(items[1])
+            #LSN=int(items[2])
+            #corrFac=float(items[3])
+            #if corrFac<0.85: 
+            #    print run,corrFac,"not using"
+            #    continue
+            #if not corrPerRun.has_key(run):
+            #    corrPerRun[run]={}
+            #corrPerRun[run][(LS1,LSN)]=corrFac
+            fill=int(items[0])
+            corrFac=float(items[1])
+            corrPerFill[fill]=corrFac
+        except:
+            print "Problem with line",line
+    
+    corrfile.close()
 print corrPerFill
 
 if args.corrtfile!="":
@@ -268,58 +354,11 @@ if args.yaml!="":
         yamlFile.write("comments:  2016 data up to June 2nd\n")
         yamlFile.write("since:\n")
 
-    # Average per run
-    #runs=corrPerRun.keys()
-    #runs.sort()
-    #for run in runs:
-    #    averageCorrPerRun=0.0
-    #    counter=0
-    #    for LSrange in corrPerRun[run]:
-    #        averageCorrPerRun=averageCorrPerRun+corrPerRun[run][LSrange]
-    #        counter=counter+1
-    #    averageCorrPerRun=averageCorrPerRun/counter
-    #    yamlFile.write("      - "+str(run)+":\n")
-    #    yamlFile.write("              func: poly1dWafterglow\n")
-    #    yamlFile.write("              payload: {'coefs': '"+str(f_LHC/float(args.xsec))+",0.', 'afterglowthresholds':'(1,"+str(averageCorrPerRun)+")'}\n")
-    #    yamlFile.write("              comments: 2015, egev 6500, PROTPHYS, preliminary VdM calibration\n")
-
-    # Average per fill
-    #runs=corrPerRun.keys()
-    #runs.sort()
     fills=corrPerFill.keys()
     fills.sort()
     lastFill=0
     for thisFill in fills:
         run=fillInfo[str(thisFill)][1][0]
-        #thisFill=findRunInFill(run)
-        #if thisFill==-1:
-        #    continue
-        #if lastFill==0:
-        #    lastFill=findRunInFill(run)
-        #    averageCorrPerRun=0.0
-        #    counter=0
-        #if lastFill!= thisFill or run==runs[-1]:
-        #    if run==runs[-1]:
-        #        print "LAST RUN"
-        #        for LSrange in corrPerRun[run]:
-        #            averageCorrPerRun=averageCorrPerRun+corrPerRun[run][LSrange]
-        #            counter=counter+1
-        #    try:
-        #        firstRunInFill=str(fillInfo[lastFill][1][0])
-        #    except:
-        #        print lastFill, run
-        #        continue
-        #    averageCorrPerRun=averageCorrPerRun/counter
-        #    yamlFile.write("      - "+str(firstRunInFill)+":\n")
-        #    yamlFile.write("              func: poly1dWafterglow\n")
-        #    yamlFile.write("              payload: {'coefs': '"+str(f_LHC/float(args.xsec))+",0.', 'afterglowthresholds':'(1,"+str(averageCorrPerRun)+")'}\n")
-        #    yamlFile.write("              comments: 2015, egev 6500, PROTPHYS, VdM calibration\n")
-        #    averageCorrPerRun=0.0
-        #    counter=0
-        #for LSrange in corrPerRun[run]:
-        #    averageCorrPerRun=averageCorrPerRun+corrPerRun[run][LSrange]
-        #    counter=counter+1
-        #lastFill=findRunInFill(run)
         yamlFile.write("      - "+str(run)+":\n")
         #yamlFile.write("              func: poly1dWafterglow\n")
         #yamlFile.write("              payload: {'coefs': '"+str(f_LHC/float(args.xsec))+",0.', 'afterglowthresholds':'(1,"+str(corrPerFill[thisFill])+")'}\n")
@@ -369,6 +408,7 @@ for filename in filenames:
         print "nEntries ",nEntries
         if args.corrtfile!="":
             thisCorrHist=0
+            allCorrHist=0
             lastFill=0
         for iEnt in range(nEntries):
             tree.GetEntry(iEnt)
@@ -387,12 +427,18 @@ for filename in filenames:
                 print thisFill,"not in fills"
                 continue
 
-            if thisCorrHist==0 or thisFill!=lastFill:
-                try:
-                    thisCorrHist=corrtfile.Get("Ratio_Correction_"+str(thisFill))
-                except:
-                    print "No correction for","Ratio_Correction_"+str(thisFill)
-                    thisCorrHist=0
+            if args.corrtfile!="":
+                if thisCorrHist==0 or thisFill!=lastFill:
+                    try:
+                        thisCorrHist=corrtfile.Get("Ratio_Correction_"+str(thisFill))
+                        allCorrHist=corrtfile.Get("Overall_Ratio_"+str(thisFill))
+                    except:
+                        print "No correction for","Ratio_Correction_"+str(thisFill)
+                        thisCorrHist=0
+                        allCorrHist=0
+            else:
+                thisCorrHist=0
+                allCorrHist=0
             #print tree.nCluster,
             #print tree.run,
             #print NBXPerFill[thisFill],
@@ -401,34 +447,43 @@ for filename in filenames:
             nClusterXNBX=tree.nCluster*NBXPerFill[thisFill]
             PCLumi_uncorr=nClusterXNBX*f_LHC/args.xsec
             PCLumi_corr=PCLumi_uncorr
+            corrFactor=1.0
             if corrPerFill.has_key(thisFill):
-                rawPCCFile.write(str(tree.run)+","+str(tree.LS)+","+str(nClusterXNBX*corrPerFill[thisFill])+"\n")
-                if args.xing==1:
-                    rawPCCFilePerBX.write(str(tree.run)+","+str(tree.LS))
-                    for ibx in range(1,3565):
-                        if ibx not in tree.PCBXid:
-                            rawPCCFilePerBX.write(","+str(0.0))
+                corrFactor=corrPerFill[thisFill]
+            print tree.run,thisFill,NBXPerFill[thisFill],corrFactor
+            if allCorrHist!=0:
+                #print "corrFactor, Before",corrFactor
+                if allCorrHist.GetBinContent(1)>0.8:
+                    corrFactor=allCorrHist.GetBinContent(1)
+                    #print "corrFactor, After",corrFactor
+                
+            rawPCCFile.write(str(tree.run)+","+str(tree.LS)+","+str(nClusterXNBX*corrFactor)+"\n")
+            if args.xing==1:
+                rawPCCFilePerBX.write(str(tree.run)+","+str(tree.LS)+","+str(nClusterXNBX*corrFactor))
+                for ibx in range(1,3565):
+                    if ibx not in tree.PCBXid:
+                        rawPCCFilePerBX.write(","+str(0.0))
+                    else:
+                        index=list(tree.PCBXid).index(ibx)
+                        if thisCorrHist!=0:
+                            rawPCCFilePerBX.write(","+str(tree.nPCPerBXid[index]*(1-thisCorrHist.GetBinContent(ibx+1))))
                         else:
-                            index=list(tree.PCBXid).index(ibx)
-                            if thisCorrHist!=0:
-                                rawPCCFilePerBX.write(","+str(tree.nPCPerBXid[index]*(1-thisCorrHist.GetBinContent(ibx+1))))
-                            else:
-                                rawPCCFilePerBX.write(","+str(tree.nPCPerBXid[index]))
-                    rawPCCFilePerBX.write("\n")
-                PCLumi_corr=PCLumi_corr*corrPerFill[thisFill]
-                PCLumiFile.write(str(tree.run)+","+str(tree.LS)+","+str(PCLumi_corr)+"\n")
-                if args.xing==1:
-                    PCLumiFilePerBX.write(str(tree.run)+","+str(tree.LS))
-                    for ibx in range(1,3565):
-                        if ibx not in tree.PCBXid:
-                            PCLumiFilePerBX.write(","+str(0.0))
+                            rawPCCFilePerBX.write(","+str(tree.nPCPerBXid[index]))
+                rawPCCFilePerBX.write("\n")
+            PCLumi_corr=PCLumi_corr*corrFactor
+            PCLumiFile.write(str(tree.run)+","+str(tree.LS)+","+str(PCLumi_corr)+"\n")
+            if args.xing==1:
+                PCLumiFilePerBX.write(str(tree.run)+","+str(tree.LS)+","+str(PCLumi_corr))
+                for ibx in range(1,3565):
+                    if ibx not in tree.PCBXid:
+                        PCLumiFilePerBX.write(","+str(0.0))
+                    else:
+                        index=list(tree.PCBXid).index(ibx)
+                        if thisCorrHist!=0:
+                            PCLumiFilePerBX.write(","+str(tree.nPCPerBXid[index]*(1-thisCorrHist.GetBinContent(ibx+1))))
                         else:
-                            index=list(tree.PCBXid).index(ibx)
-                            if thisCorrHist!=0:
-                                PCLumiFilePerBX.write(","+str(tree.nPCPerBXid[index]*(1-thisCorrHist.GetBinContent(ibx+1))))
-                            else:
-                                PCLumiFilePerBX.write(","+str(tree.nPCPerBXid[index]))
-                    PCLumiFilePerBX.write("\n")
+                            PCLumiFilePerBX.write(","+str(tree.nPCPerBXid[index]))
+                PCLumiFilePerBX.write("\n")
             else:
                 print "No corrections available for run",thisFill,tree.run
                 print "DO NOTHING... CORRECTIONS ARE REQUIRED"
