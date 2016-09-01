@@ -109,6 +109,24 @@ type1corr["5149"]=0.1281
 type1corr["5151"]=0.1159
 type1corr["5154"]=0.1205
 type1corr["5161"]=0.1246
+type1corr["5162"]=0.1185
+type1corr["5163"]=0.1229
+type1corr["5169"]=0.1212
+type1corr["5170"]=0.1175
+type1corr["5173"]=0.1249
+type1corr["5179"]=0.1205
+type1corr["5181"]=0.1241
+type1corr["5183"]=0.1243
+type1corr["5187"]=0.1248
+type1corr["5194"]=0.1314
+type1corr["5197"]=0.1236
+type1corr["5198"]=0.1262
+type1corr["5199"]=0.1283
+type1corr["5205"]=0.0866
+type1corr["5206"]=0.0856
+type1corr["5209"]=0.0843
+type1corr["5210"]=0.0871
+
 
 BXLength=3564
 zeroes=array.array('d',[0.]*BXLength)

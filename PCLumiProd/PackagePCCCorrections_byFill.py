@@ -47,7 +47,7 @@ for lumiBlockText in lumiBlocks:
     total_origin=0
     total_after=0
     for i in range(3600):
-        if h_origin.GetBinContent(i) > 0.5:
+        if h_after.GetBinContent(i) > 0.5:
             total_origin+=h_origin.GetBinContent(i)
             total_after+=h_after.GetBinContent(i)
     
