@@ -126,7 +126,18 @@ type1corr["5205"]=0.0866
 type1corr["5206"]=0.0856
 type1corr["5209"]=0.0843
 type1corr["5210"]=0.0871
-
+type1corr["5211"]=0.0897
+type1corr["5213"]=0.0859
+type1corr["5219"]=0.0882
+type1corr["5222"]=0.0907
+type1corr["5223"]=0.0938
+type1corr["5229"]=0.0865
+type1corr["5247"]=0.0753
+type1corr["5251"]=0.0889
+type1corr["5253"]=0.0896
+type1corr["5254"]=0.0898
+type1corr["5256"]=0.0875
+type1corr["5257"]=0.0845
 
 BXLength=3564
 zeroes=array.array('d',[0.]*BXLength)
