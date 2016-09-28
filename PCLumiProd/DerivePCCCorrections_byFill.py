@@ -485,18 +485,20 @@ for LBKey in LBKeys:
          
     
     print "Apply and save type 1 corrections"
+    
     if not args.noType1:
         for k in range(1,BXLength):
             if not args.type1byfill: 
-                bin_k = allCorrLumiPerBX[LBKey].GetBinContent(k)
-                allCorrLumiPerBX[LBKey].SetBinContent(k+1, allCorrLumiPerBX[LBKey].GetBinContent(k+1)-bin_k*a1-bin_k*bin_k*a2)
+                bin_k = allLumiPerBX[LBKey].GetBinContent(k)
+                allLumiPerBX[LBKey].SetBinContent(k+1, allCorrLumiPerBX[LBKey].GetBinContent(k+1)-bin_k*a1-bin_k*bin_k*a2)
                 corrPerBX[LBKey].SetBinContent(k+1, corrPerBX[LBKey].GetBinContent(k+1)+bin_k*a1+bin_k*bin_k*a2)
                
             else:
                 if type1corr.has_key(LBKey):
-                    bin_k = allCorrLumiPerBX[LBKey].GetBinContent(k)
-                    allCorrLumiPerBX[LBKey].SetBinContent(k+1, allCorrLumiPerBX[LBKey].GetBinContent(k+1)-bin_k*type1corr[LBKey])
-                    corrPerBX[LBKey].SetBinContent(k+1, corrPerBX[LBKey].GetBinContent(k+1)+bin_k*type1corr[LBKey])
+                    corrfac = type1corr[LBKey]-type1corr[LBKey]*type1corr[LBKey]
+                    bin_k = allLumiPerBX[LBKey].GetBinContent(k)
+                    allCorrLumiPerBX[LBKey].SetBinContent(k+1, allCorrLumiPerBX[LBKey].GetBinContent(k+1)-bin_k*corrfac)
+                    corrPerBX[LBKey].SetBinContent(k+1, corrPerBX[LBKey].GetBinContent(k+1)+bin_k*corrfac)
 
                 else:
                     print "No type 1 correction for this fill: ", LBKey
@@ -517,7 +519,7 @@ for LBKey in LBKeys:
     print "Apply and save type 2 corrections"
     if not args.noType2:
         for i in range(1,BXLength):
-            for j in range(i+1,BXLength):
+            for j in range(i+1, i+BXLength):
                 binsig_i=allCorrLumiPerBX[LBKey].GetBinContent(i)
                 binfull_i=allLumiPerBX[LBKey].GetBinContent(i)
                 if j<BXLength:
