@@ -451,6 +451,8 @@ print LBKeys
 
 
 for LBKey in LBKeys:
+    if not int(LBKey)==5021:
+        continue
     print allLumiPerBX.keys()
     print LBKey, allLumiPerBX[LBKey]
     #allLumiPerBX[LBKey].Draw()
