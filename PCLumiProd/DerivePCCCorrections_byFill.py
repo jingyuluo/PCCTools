@@ -142,6 +142,7 @@ type1corr["5258"]=0.0957
 type1corr["5261"]=0.0982
 type1corr["5264"]=0.0957
 type1corr["5265"]=0.0954
+type1corr["5266"]=0.0954
 type1corr["5267"]=0.0954
 type1corr["5270"]=0.0959
 type1corr["5274"]=0.0987
@@ -402,6 +403,8 @@ if args.buildFromScratch==1:
             if iev%1000==101:
                 print "event",iev
             tree.GetEntry(iev)
+            if not tree.fill==5266:
+                continue
             if str(tree.run) not in runs:
                 continue
             LBKey = str(tree.fill)
@@ -455,6 +458,8 @@ print LBKeys
 for LBKey in LBKeys:
     print allLumiPerBX.keys()
     print LBKey, allLumiPerBX[LBKey]
+    if not int(LBKey)==5266:
+        continue
     #allLumiPerBX[LBKey].Draw()
     #run=LBKey.split("_")[0]
     if args.buildFromScratch==1:
