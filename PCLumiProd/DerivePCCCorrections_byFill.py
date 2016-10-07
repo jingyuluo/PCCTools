@@ -142,6 +142,7 @@ type1corr["5258"]=0.0957
 type1corr["5261"]=0.0982
 type1corr["5264"]=0.0957
 type1corr["5265"]=0.0954
+type1corr["5266"]=0.0954
 type1corr["5267"]=0.0954
 type1corr["5270"]=0.0959
 type1corr["5274"]=0.0987
