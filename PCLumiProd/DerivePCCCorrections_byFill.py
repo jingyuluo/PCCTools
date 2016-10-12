@@ -153,6 +153,17 @@ type1corr["5279"]=0.0985
 type1corr["5282"]=0.0995
 type1corr["5287"]=0.1011
 type1corr["5288"]=0.1010
+type1corr["5330"]=0.074
+type1corr["5331"]=0.1012
+type1corr["5332"]=0.097
+type1corr["5338"]=0.0979
+type1corr["5339"]=0.1177
+type1corr["5340"]=0.1137
+type1corr["5345"]=0.1129
+type1corr["5351"]=0.1112
+type1corr["5352"]=0.1134
+type1corr["5355"]=0.1156
+
 
 BXLength=3564
 zeroes=array.array('d',[0.]*BXLength)
@@ -520,7 +531,7 @@ for LBKey in LBKeys:
     print "Apply and save type 2 corrections"
     if not args.noType2:
         for i in range(1,BXLength):
-            for j in range(i+1,BXLength):
+            for j in range(i+1,i+BXLength):
                 binsig_i=allCorrLumiPerBX[LBKey].GetBinContent(i)
                 binfull_i=allLumiPerBX[LBKey].GetBinContent(i)
                 if j<BXLength:
