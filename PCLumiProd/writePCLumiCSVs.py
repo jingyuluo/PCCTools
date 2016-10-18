@@ -17,7 +17,6 @@ parser.add_argument("--justyaml",default=0, help="Only write yaml")
 parser.add_argument("--xsec",default=9.05e6, type=float, help="PC cross section (default:  9.05e6 ub).")
 args=parser.parse_args()
 
-#Not finished updating all the fills. Oct18 2016 
 #Fill   Bfield    Runs 
 fillInfo={}
 
