@@ -163,7 +163,10 @@ type1corr["5345"]=0.1129
 type1corr["5351"]=0.1112
 type1corr["5352"]=0.1134
 type1corr["5355"]=0.1156
-
+type1corr["5386"]=0.105
+type1corr["5391"]=0.1026
+type1corr["5393"]=0.1119
+type1corr["5394"]=0.1142
 
 BXLength=3564
 zeroes=array.array('d',[0.]*BXLength)
