@@ -243,7 +243,7 @@ for filename in filenames:
         
         hists[fHistName+"SBIL"]=ROOT.TH1F(fHistName+"SBIL", "; SBIL;"+fHistName,100, -0.5, 8)
         
-        hists[fHistName+"TrailingRatios"]=ROOT.TH1F(fHistName+"TrailingRatios",";Type 1 Fraction from after BX train;"+fHistName,200,-0.03,0.15)
+        hists[fHistName+"TrailingRatios"]=ROOT.TH1F(fHistName+"TrailingRatios",";Type 1 Fraction from after BX train;"+fHistName,270,-0.06,0.15)
         hists[fHistName+"Type2Residuels"]=ROOT.TH1F(fHistName+"Type2Residuels",";Type 2 residual (Hz/ub);"+fHistName,200,-0.02,0.15)
         
         lastBX=-1
@@ -259,7 +259,7 @@ for filename in filenames:
             hists[fHistName+"SBIL"].Fill(lumi)
             # Is bunch active?
             # Needs to be more than noise and less than lumi
-            threshold=0.5
+            threshold=hists[fHistName].GetMaximum()*0.2
             if lumi>threshold: 
                 nActiveBX=nActiveBX+1
                 # is leading?

@@ -47,12 +47,16 @@ type1corr["4926"]=0.0776
 type1corr["4930"]=0.0796
 type1corr["4935"]=0.0794
 type1corr["4937"]=0.074
+type1corr["4942"]=0.0796
+type1corr["4945"]=0.0932
 type1corr["4947"]=0.0974
 type1corr["4953"]=0.08714
 type1corr["4954"]=0.074
 type1corr["4956"]=0.08708
 type1corr["4958"]=0.09485
 type1corr["4960"]=0.09729
+type1corr["4961"]=0.0988
+type1corr["4964"]=0.0992
 type1corr["4965"]=0.1003
 type1corr["4976"]=0.09986
 type1corr["4979"]=0.1043
@@ -79,6 +83,7 @@ type1corr["5048"]=0.1107
 type1corr["5052"]=0.1157
 type1corr["5056"]=0.1077
 type1corr["5060"]=0.1146
+type1corr["5068"]=0.0405
 type1corr["5069"]=0.1194
 type1corr["5071"]=0.1188
 type1corr["5072"]=0.1219
@@ -435,6 +440,7 @@ if args.buildFromScratch==1:
        
         for iev in range(nentries):
         #    print "event", allLumiPerBX
+            
             if iev%1000==101:
                 print "event",iev
             tree.GetEntry(iev)
@@ -471,7 +477,8 @@ else:
                     continue
                 
                 LBKeys.append(LBKey)
-                
+   #             if int(LBKey)<5056: #or int(LBKey)>5213:
+   #                 continue 
                 allLumiPerBX[LBKey]=tfile.Get("Before_Corr_"+LBKey)
                 #allLumiPerBX[LBKey]=ROOT.TH1F("allLumiPerBX"+LBKey,"",BXLength,0,BXLength)
                 noisePerBX[LBKey]=ROOT.TH1F("noisePerBX"+LBKey,"",BXLength,0,BXLength)
@@ -489,6 +496,8 @@ print LBKeys
 
 
 for LBKey in LBKeys:
+    #if int(LBKey)<5056: #or int(LBKey)>5213:
+    #    continue
     print allLumiPerBX.keys()
     print LBKey, allLumiPerBX[LBKey]
     #allLumiPerBX[LBKey].Draw()
@@ -611,7 +620,7 @@ for LBKey in LBKeys:
     activelumi_after = 0
    
     for ibx in range(1, BXLength):
-        if(allLumiPerBX[LBKey].GetBinContent(ibx)>0.5):
+        if(allLumiPerBX[LBKey].GetBinContent(ibx)>allLumiPerBX[LBKey].GetMaximum()*0.2):
             activelumi_before+=allLumiPerBX[LBKey].GetBinContent(ibx)
             activelumi_after+=allCorrLumiPerBX[LBKey].GetBinContent(ibx)
     if not activelumi_before==0: 
