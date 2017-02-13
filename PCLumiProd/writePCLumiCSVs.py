@@ -514,13 +514,13 @@ for filename in filenames:
             corrFactor=1.0
             if corrPerFill.has_key(thisFill):
                 corrFactor=corrPerFill[thisFill]
-            print tree.run,thisFill,NBXPerFill[thisFill],corrFactor
+            #print tree.run,thisFill,NBXPerFill[thisFill],corrFactor
             if allCorrHist!=0:
-                print "corrFactor, Before",corrFactor
-		print allCorrHist.GetBinContent(1)
+                #print "corrFactor, Before",corrFactor
+		#print allCorrHist.GetBinContent(1)
                 if allCorrHist.GetBinContent(1)>0.8:
                     corrFactor=allCorrHist.GetBinContent(1)
-                    print "corrFactor, After",corrFactor
+                    #print "corrFactor, After",corrFactor
                 
             rawPCCFile.write(str(tree.run)+","+str(tree.LS)+","+str(nClusterXNBX*corrFactor)+"\n")
             if args.xing==1:
