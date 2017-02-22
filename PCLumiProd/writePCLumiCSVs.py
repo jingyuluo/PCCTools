@@ -395,8 +395,23 @@ if args.corrfile!="":
     corrfile.close()
 print corrPerFill
 
+availableCorrHists={}
 if args.corrtfile!="":
     corrtfile=ROOT.TFile.Open(args.corrtfile)
+    histKeys=corrtfile.GetListOfKeys()
+    for histKey in histKeys:
+        histName=histKey.GetName()
+        # example hist name:  Ratio_Correction_275376_LS3101_LS3200
+        if histName.find("Ratio_Correction_")!=-1: 
+            nameParts=histName.split("_") 
+            run=int(nameParts[2])
+            lsstart=int(nameParts[-2].split("LS")[1])
+            lsend=int(nameParts[-1].split("LS")[1])
+            if not availableCorrHists.has_key(run):
+                availableCorrHists[run]=[]
+            availableCorrHists[run].append([lsstart,lsend])
+
+print availableCorrHists
 
 f_LHC=11245.6
 
@@ -474,6 +489,7 @@ for filename in filenames:
             thisCorrHist=0
             allCorrHist=0
             lastFill=0
+
         for iEnt in range(nEntries):
             tree.GetEntry(iEnt)
             if args.runs!="":
@@ -492,14 +508,42 @@ for filename in filenames:
                 continue
 
             if args.corrtfile!="":
-                if thisCorrHist==0 or thisFill!=lastFill:
-                    try:
-                        thisCorrHist=corrtfile.Get("Ratio_Correction_"+str(thisFill))
-                        allCorrHist=corrtfile.Get("Overall_Ratio_"+str(thisFill))
-                    except:
-                        print "No correction for","Ratio_Correction_"+str(thisFill)
-                        thisCorrHist=0
-                        allCorrHist=0
+                #if thisCorrHist==0 or thisFill!=lastFill:
+                try:
+                    #find run in list of available 
+                    histSuffix=""
+                    thisCorrHist=0
+                    allCorrHist=0
+                    if tree.run in availableCorrHists.keys():
+                        #find ls in range
+                        bestLSRange=[-9999,-9999]
+                        distFromLS=9999
+                        exactFind=False
+                        for lsrange in availableCorrHists[tree.run]:
+                            #found it exactly
+                            if tree.LS>=lsrange[0] and tree.LS<=lsrange[1]:
+                                bestLSRange=lsrange
+                                exactFind=True
+                                break
+                            #saving the closest
+                            else:
+                                thisDistFromLS=min(abs(tree.LS-bestLSRange[0]),abs(tree.LS-bestLSRange[1]))
+                                if distFromLS>thisDistFromLS:
+                                    bestLSRange=lsrange
+                                    distFromLS=thisDistFromLS
+
+                        if not exactFind:
+                            print "Using",bestLSRange,"for",tree.LS
+
+                        histSuffix=str(tree.run)+"_LS"+str(bestLSRange[0])+"_LS"+str(bestLSRange[1])
+                        thisCorrHist=corrtfile.Get("Ratio_Correction_"+histSuffix)
+                        allCorrHist=corrtfile.Get("Overall_Ratio_"+histSuffix)
+                            
+                    else:
+                        # FIXME look for other runs in the same fill
+                        print tree.run,"missing from runs with corrections"
+                except:
+                    print "No correction for",tree.run,tree.ls
             else:
                 thisCorrHist=0
                 allCorrHist=0
@@ -517,7 +561,7 @@ for filename in filenames:
             #print tree.run,thisFill,NBXPerFill[thisFill],corrFactor
             if allCorrHist!=0:
                 #print "corrFactor, Before",corrFactor
-		#print allCorrHist.GetBinContent(1)
+                #print "getbin",allCorrHist.GetBinContent(1)
                 if allCorrHist.GetBinContent(1)>0.8:
                     corrFactor=allCorrHist.GetBinContent(1)
                     #print "corrFactor, After",corrFactor
