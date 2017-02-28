@@ -17,3 +17,10 @@ Update a new correction file:
 Checked the missing runs, all the missing runs are the ones shorter than 30 LSs, except for 279694, for which the random triggered sample
 is imcomplete, have resubmitted the crab job.
 ##############################################################################################################################
+
+Feb. 28, 2018:
+Update the corection file for FPix only data:
+
+/store/group/comm_luminosity/PCC/ForLumiSystematics/CorrectionFiles/Overall_Correction_PCC_Run2016_per100LSs_FPix_only_v1.root
+
+##############################################################################################################################
