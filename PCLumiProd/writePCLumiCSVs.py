@@ -395,6 +395,7 @@ if args.corrfile!="":
     corrfile.close()
 print corrPerFill
 
+vetoCorrRuns=[]
 availableCorrHists={}
 if args.corrtfile!="":
     corrtfile=ROOT.TFile.Open(args.corrtfile)
@@ -405,6 +406,8 @@ if args.corrtfile!="":
         if histName.find("Ratio_Correction_")!=-1: 
             nameParts=histName.split("_") 
             run=int(nameParts[2])
+            if run in vetoCorrRuns:
+                continue
             lsstart=int(nameParts[-2].split("LS")[1])
             lsend=int(nameParts[-1].split("LS")[1])
             if not availableCorrHists.has_key(run):
@@ -542,6 +545,27 @@ for filename in filenames:
                     else:
                         # FIXME look for other runs in the same fill
                         print tree.run,"missing from runs with corrections"
+                        runsInThisFill=fillInfo[thisFill][1]
+                        closestRunWithCorr=0
+                        distToClosestRun=1000000
+                        for runInFill in runsInThisFill:
+                            if runInFill in availableCorrHists.keys():
+                               thisDist=abs(closestRunWithCorr-tree.run)
+                               if thisDist<distToClosestRun:
+                                  distToClosestRun=thisDist
+                                  closestRunWithCorr=runInFill
+
+                        #run earlier than this one... take lastest LS range
+                        if tree.run>closestRunWithCorr:
+                            bestLSRange=availableCorrHists[closestRunWithCorr][-1]
+                        else:
+                        #run later than this one... take earliest LS range
+                            bestLSRange=availableCorrHists[closestRunWithCorr][0]
+
+                        print "Closest match with correction is",closestRunWithCorr,bestLSRange
+                        histSuffix=str(closestRunWithCorr)+"_LS"+str(bestLSRange[0])+"_LS"+str(bestLSRange[1])
+                        thisCorrHist=corrtfile.Get("Ratio_Correction_"+histSuffix)
+                        allCorrHist=corrtfile.Get("Overall_Ratio_"+histSuffix)
                 except:
                     print "No correction for",tree.run,tree.ls
             else:
